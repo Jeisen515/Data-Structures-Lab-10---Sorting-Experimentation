@@ -12,17 +12,19 @@ public class SelectionSort<E> extends AbstractSortingStrategy<E> {
 	@Override
 	public void sortList(ArrayList<E> dataSet) {
 		int n = dataSet.size(); 
-		/* TODO ADD CODE HERE FOLLOWING PSEUDOCODE
-		 * 
-		 * Use a simple for loop to find the smallest value in the desired range
-		 * 
-		 * To compare two values in dataSet, use something like:
-		 *    if (cmp.compare(dataSet.get(j), dataSet.get(sm)) < 0)
-		 * To swap, use something like:
-		 *    SortingUtils.swapListElements(dataSet, sm, i); 
-		 *    assuming that sm and i are indexes within dataSet.
-		 */
 		
-	}
+		for(int i = 0; i < n - 1; i++) {
+			int minIndex = i;
+			
+			for(int j = i+1; j < n; j++) {
+				if(cmp.compare(dataSet.get(j), dataSet.get(minIndex)) < 0){
+					minIndex = j;
+				}
+			}
+			E temp = dataSet.get(minIndex);
+			dataSet.set(minIndex, dataSet.get(i));
+			dataSet.set(i, temp);
+		}
 
+	}
 }

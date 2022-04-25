@@ -21,7 +21,7 @@ public class ExperimentalTrials {
 		ExperimentController ec = new ExperimentController(50, 200, 50, 1000); 
 
 		
-		/* TODO UNCOMMENT THIS BLOCK TO RUN THE EXPERIMENTAL TRIALS
+
 		Comparator<Integer> comparator = new IntegerComparator1();
 		ec.addStrategy(new StrategiesTimeCollection<Integer>(new BubbleSort<Integer>(comparator))); 
 		ec.addStrategy(new StrategiesTimeCollection<Integer>(new HeapSort<Integer>(comparator))); 
@@ -29,7 +29,6 @@ public class ExperimentalTrials {
 		ec.addStrategy(new StrategiesTimeCollection<Integer>(new QuickSort<Integer>(comparator))); 
 		ec.addStrategy(new StrategiesTimeCollection<Integer>(new MergeSort<Integer>(comparator))); 
 		ec.addStrategy(new StrategiesTimeCollection<Integer>(new InsertionSort<Integer>(comparator))); 
-		*/
 		ec.run();    // run the experiments on all the strategies added to the controller object (ec)
 		
 		// save the results for each strategy

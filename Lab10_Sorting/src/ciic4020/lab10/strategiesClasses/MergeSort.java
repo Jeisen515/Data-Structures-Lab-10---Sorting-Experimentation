@@ -31,7 +31,17 @@ public class MergeSort<E> extends AbstractSortingStrategy<E> {
 	 * @param last   The index of last  position in portion to be sorted
 	 */
 	private void ms(ArrayList<E> data, int first, int last) {
-		/*TODO ADD YOUR CODE HERE*/
+		if( first < last) {
+			int middle = first + (last - first)/2;
+			//We find the middle point
+			
+			//We sort the first and second halved by recursion
+			ms(data, first, middle);
+			ms(data, middle + 1, last);
+			
+			//We merge the sorted halves
+			merge(data, first, middle, last);
+		}
 	}
 
 	/**

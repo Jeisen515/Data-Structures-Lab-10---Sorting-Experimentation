@@ -30,7 +30,12 @@ public class QuickSort<E> extends AbstractSortingStrategy<E> {
 	 * @param last   The index of last  position in portion to be sorted
 	 */
 	private void qs(ArrayList<E> data, int first, int last) {
-		/*TODO ADD YOUR CODE HERE*/
+		if(first < last) {
+			int pi = partitionList(data, first, last);
+			
+			qs(data, first, pi-1);
+			qs(data, pi+1, last);
+		}
 	}
 
 	/**
